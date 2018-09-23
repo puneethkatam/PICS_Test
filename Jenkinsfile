@@ -29,7 +29,7 @@ pipeline {
 
                 echo 'Determine Conflicts'
                 sh "./gradlew"
-		sh "./gradlew getConflicts -PtargetURL=${PEGA_DEV} -Pbranch=master -PpegaUsername=puneeth_export -PpegaPassword=$rules"
+		sh "./gradlew getConflicts -PtargetURL=${PEGA_DEV} -Pbranch=master -PpegaUsername=puneeth_export -PpegaPassword=rules"
             }
         }
 
