@@ -11,10 +11,10 @@ pipeline {
       withCredentials([
         usernamePassword(credentialsId: 'PDM_JFrogRepository', 
             passwordVariable: 'P@ssw0rd_pega', 
-            usernameVariable: 'pega_admin'),
-        usernamePassword(credentialsId: 'puneeth_export', 
+            usernameVariable: 'pega_admin')
+        /*usernamePassword(credentialsId: 'puneeth_export', 
             passwordVariable: 'rules', 
-            usernameVariable: 'puneeth_export')
+            usernameVariable: 'puneeth_export')*/
         ])
     }
 
