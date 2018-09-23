@@ -9,12 +9,12 @@ pipeline {
       timestamps()
       timeout(time: 15, unit: 'MINUTES')
       withCredentials([
-        usernamePassword(credentialsId: 'artifactory', 
-            passwordVariable: 'ARTIFACTORY_PASSWORD', 
-            usernameVariable: 'ARTIFACTORY_USER'),
-        usernamePassword(credentialsId: 'imsadmin', 
-            passwordVariable: 'IMS_PASSWORD', 
-            usernameVariable: 'IMS_USER')
+        usernamePassword(credentialsId: 'PDM_JFrogRepository', 
+            passwordVariable: 'P@ssw0rd_pega', 
+            usernameVariable: 'pega_admin'),
+        usernamePassword(credentialsId: 'puneeth_export', 
+            passwordVariable: 'rules', 
+            usernameVariable: 'puneeth_export')
         ])
     }
 
@@ -123,7 +123,7 @@ pipeline {
   post {
     failure {
       mail (
-          subject: "${JOB_NAME} ${BUILD_NUMBER} merging branch ${branchName} has failed",
+          subject: "${JOB_NAME} ${BUILD_NUMBER} merging branch  has failed",
           body: "Your build ${env.BUILD_NUMBER} has failed.  Find details at ${env.RUN_DISPLAY_URL}", 
           to: notificationSendToID
       )
