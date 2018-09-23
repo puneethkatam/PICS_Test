@@ -125,7 +125,7 @@ pipeline {
       mail (
           subject: "${JOB_NAME} ${BUILD_NUMBER} merging branch  has failed",
           body: "Your build ${env.BUILD_NUMBER} has failed.  Find details at ${env.RUN_DISPLAY_URL}", 
-          to: notificationSendToID
+          to: puneeth.in@gmail.com
       )
     }   
   }
