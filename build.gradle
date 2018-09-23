@@ -43,12 +43,15 @@ ext {
 
 // Define properties to be used later in later tasks
 def buildNumber = findProperty("buildNumber") ?:System.env.BUILD_NUMBER
-def applicationName = findProperty("applicationName") ?:defaultApplicationName
-def applicationVersion = findProperty("applicationVersion") ?:defaultApplicationVersion
+def applicationName = "DevOps"
+//findProperty("applicationName") ?:defaultApplicationName
+def applicationVersion = "01.01.03"
+//findProperty("applicationVersion") ?:defaultApplicationVersion
 def artifactVersion = findProperty("artifactVersion") ?:applicationVersion + '_' + buildNumber
 def artifactoryURL = findProperty("artifactoryURL") ?:System.env.ARTIFACTORY_URL
 def artifactorGroup = findProperty("artifactoryGroup") ?:defaultArtifactoryGroup
-def artifactoryRepoKey = findProperty("artifactoryRepoKey") ?:defaultArtifactoryRepoKey
+def artifactoryRepoKey = "Pega_PDM"
+//findProperty("artifactoryRepoKey") ?:defaultArtifactoryRepoKey
 def archiveName = "${applicationName}_${applicationVersion}"
 def archiveNameWithExt = "${archiveName}.zip"
 def artifactLocation = findProperty("artifactoryLocation") ?:"${artifactoryURL}/${artifactoryRepoKey}/${artifactorGroup}/${applicationName}/${artifactVersion}/${applicationName}-${applicationVersion}_${buildNumber}.zip"
