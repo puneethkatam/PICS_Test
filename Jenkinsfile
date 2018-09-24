@@ -58,7 +58,7 @@ pipeline {
 
 		 mail (
 		           subject: "Approval for ${env.BUILD_NUMBER}",
-			             body: "Your build ${env.BUILD_NUMBER}",
+			             body: "Your build ${env.BUILD_NUMBER}, ${env.RUN_DISPLAY_URL}",
 				               to: "puneeth.in@gmail.com"
 					             )
 		input message: 'Ready to go?' 
