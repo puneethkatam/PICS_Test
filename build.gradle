@@ -213,7 +213,8 @@ task getConflicts(type: org._10ne.gradle.rest.RestTask) {
 	description 'Check for branch conflict.'
 
 	def branch = findProperty("branch")
-	def targetURL = findProperty("targetURL")
+	def targetURL = "http://svl-pgwasdb-d1:9101/pdmodevb"
+	//findProperty("targetURL")
 
 	httpMethod = 'get'
 	uri = "${targetURL}/api/v1/branches/${branch}/conflicts"
