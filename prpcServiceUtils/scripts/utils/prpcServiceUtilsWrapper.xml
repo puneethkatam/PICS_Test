@@ -188,7 +188,7 @@
 			<propertyfile file="${connection.properties.file.path}" >
 				<entry key="DefaultSystem.pega.rest.server.url" value="${pega.rest.server.url}"/>
 			</propertyfile>
-			<pega:propertyfilegenerator basePropertyFile="${prpc.service.utils.property.filepath}" connectionPropertiesFile="${connection.properties.file.path}" generatedFolderPath="${generatedFolder}" generatedFilesSuffix="prpcServiceUtils.properties" echo="true" operationName="${prpc.service.util.action}" opSpecificFile="${local.operation.specific.file.path}"/>
+			<pega:propertyfilegenerator basePropertyFile="${prpc.service.utils.property.filepath}" connectionPropertiesFile="${connection.properties.file.path}" generatedFolderPath="${basedir}" generatedFilesSuffix="prpcServiceUtils.properties" echo="true" operationName="${prpc.service.util.action}" opSpecificFile="${local.operation.specific.file.path}"/>
 			<echo message="utils property file path: ${prpc.service.utils.property.filepath}, local path: ${local.operation.specific.file.path}" />
 			<antcall target="_callService"/>
 		</ac:else>
@@ -207,7 +207,7 @@
 			<arg value="-action"/>
 			<arg value="${prpc.service.util.action}"/>
 			<arg value="-propFileDir"/>
-			<arg value="${generatedFolder}"/>
+			<arg value="${basedir}"/>
 			<arg value="-poolSize"/>
 			<arg value="${prpcserviceutils.pool.size}"/>			
 			<arg value="-requestTimeOut"/>
