@@ -169,7 +169,7 @@
 
 	
 	<target name="-processInstances">
-	<property name="generatedFolder" value="${prpc.service.utils.property.filepath}"/>
+	<property name="generatedFolder" value="./"/>
 
 		<echo message="Performing ${prpc.service.util.action} on ${prpcserviceutils.number.of.systems} instance(s), generated ${generatedFolder}"/>
 		<property name="arg.line" value=" -action ${prpc.service.util.action} -propFileDir ${generatedFolder} -poolSize ${prpcserviceutils.pool.size} -requestTimeOut ${prpcserviceutils.request.timeout} -tempDir ${install.temp.dir} -artifactsDir ${artifacts.dir}"/>
