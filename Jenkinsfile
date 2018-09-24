@@ -50,6 +50,15 @@ pipeline {
             }
           }
        }
+       stage('Approve for Merge?'){
+		steps {
+		
+		input message: 'Proceed with Merge'
+		echo 'Merging the rules..'
+
+		}
+
+       }
 
        stage('Merge branch'){
         /*when {
