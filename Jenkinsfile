@@ -66,7 +66,7 @@ pipeline {
                 echo "Setting the timeout for 1 min.."
                 retry(10) {
                     echo "Merge is still being performed. Retrying..."
-                    sh "./gradlew getMergeStatus -PtargetURL=${env.PEGA_DEV} -PpegaUsername=${IMS_USER} -PpegaPassword=${IMS_PASSWORD}"
+                    sh "./gradlew getMergeStatus -PtargetURL=${env.PEGA_DEV} -PpegaUsername=puneeth_export -PpegaPassword=rules"
                     echo "Merge Status : ${env.MERGE_STATUS}"
                 }
             }
