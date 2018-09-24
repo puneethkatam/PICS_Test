@@ -52,9 +52,13 @@ pipeline {
        }
        stage('Approve for Merge?'){
 		steps {
-		
-		input message: 'Proceed with Merge'
-		echo 'Merging the rules..'
+	
+		build job: 'staging', wait: true
+		mail to: 'puneeth.in@gmail.com', subject: "Please approve #${env.BUILD_NUMBER}", 
+		body: """
+		See : ${BUILD_URL}input/
+		/*input message: 'Proceed with Merge'
+		echo 'Merging the rules..'*/
 
 		}
 
