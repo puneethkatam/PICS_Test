@@ -101,7 +101,7 @@ artifactory {
 	contextUrl = artifactoryURL
 	publish {
 		repository {
-			repoKey = Pega_PDM
+			repoKey = "Pega_PDM"
 			username = artifactoryUser
 			password = artifactoryPassword
 
