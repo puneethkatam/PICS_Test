@@ -187,7 +187,7 @@
 				<entry key="DefaultSystem.pega.rest.server.url" value="${pega.rest.server.url}"/>
 			</propertyfile>
 			<pega:propertyfilegenerator basePropertyFile="${prpc.service.utils.property.filepath}" connectionPropertiesFile="${connection.properties.file.path}" generatedFolderPath="${generatedFolder}" generatedFilesSuffix="prpcServiceUtils.properties" echo="true" operationName="${prpc.service.util.action}" opSpecificFile="${local.operation.specific.file.path}"/>
-			<echo "utils property file path: ${prpc.service.utils.property.filepath}, local path: ${local.operation.specific.file.path}">
+			<echo "utils property file path: ${prpc.service.utils.property.filepath}, local path: ${local.operation.specific.file.path}" />
 			<antcall target="_callService"/>
 		</ac:else>
 		</ac:if>
