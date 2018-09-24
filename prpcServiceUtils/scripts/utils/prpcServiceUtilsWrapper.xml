@@ -59,7 +59,7 @@
 	<import file="../commonUtilities.xml"/>
 	
 	<property name="pega.install.root" value="${basedir}"/>
-	<condition property="prpc.service.utils.property.filepath" value="${prpc.service.utils.custom.property.filepath}" else="${basedir}/prpcServiceUtils.properties">
+	<condition property="prpc.service.utils.property.filepath" value="${basedir}/prpcServiceUtils.properties" else="${basedir}/prpcServiceUtils.properties">
 		<isset property="prpc.service.utils.custom.property.filepath"/>
 	</condition>
 	
