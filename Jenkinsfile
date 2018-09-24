@@ -66,15 +66,6 @@ pipeline {
 		}
 
        }
-               stage('Export from Dev') {
-	                   steps {
-			                   echo 'Exporting application from Dev environment : ' + env.PEGA_DEV
-					                   sh "./gradlew performOperation -Dprpc.service.util.action=export -Dpega.rest.server.url=${env.PEGA_DEV}/PRRestService -Dpega.rest.username=puneeth_export -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
-							               input message: 'Ready?'
-								       }
-
-								               }
-
 
        stage('Merge branch'){
         /*when {
@@ -97,13 +88,13 @@ pipeline {
             }
           }
         }
-/*
+
         stage('Export from Dev') {
             steps {
                 echo 'Exporting application from Dev environment : ' + env.PEGA_DEV
                 sh "./gradlew performOperation -Dprpc.service.util.action=export -Dpega.rest.server.url=${env.PEGA_DEV}/PRRestService -Dpega.rest.username=puneeth_export -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
             }
-        }*/
+        }
 
        /* stage('Publish to Artifactory') {
 
@@ -135,14 +126,14 @@ pipeline {
                 echo 'Creating restore point'
                 sh "./gradlew createRestorePoint -PtargetURL=${PEGA_PROD} -PpegaUsername=${IMS_USER} -PpegaPassword=${IMS_PASSWORD}"
             }
-        }
+        }*/
         stage('Deploy to production') {
 
             steps {
               echo 'Deploying to production : ' + env.PEGA_PROD
-              sh "./gradlew performOperation -Dprpc.service.util.action=import -Dpega.rest.server.url=${env.PEGA_PROD}/PRRestService -Dpega.rest.username=${env.IMS_USER}  -Dpega.rest.password=${env.IMS_PASSWORD} -Duser.temp.dir=${WORKSPACE}/tmp"
+              sh "./gradlew performOperation -Dprpc.service.util.action=import -Dpega.rest.server.url=${env.PEGA_PROD}/PRRestService -Dpega.rest.username=puneeth_export  -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
             }
-        }*/
+        }
   }
 
   post {
