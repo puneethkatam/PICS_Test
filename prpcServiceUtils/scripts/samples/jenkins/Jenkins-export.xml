@@ -9,8 +9,6 @@
             <entry  key="${env.SystemName}.export.archiveName" value="${productName}${productVersion}"/>
             <entry  key="${env.SystemName}.export.productName" value="${productName}"/>
             <entry  key="${env.SystemName}.export.productVersion" value="${productVersion}"/>
-			<entry  key="${env.SystemName}.export.applicationName" value="${applicationName}"/>
-            <entry  key="${env.SystemName}.export.applicationVersion" value="${applicationVersion}"/>
             <entry  key="${env.SystemName}.export.async" value="false"/>
         </propertyfile>
     </target>
