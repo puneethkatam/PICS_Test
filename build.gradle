@@ -101,11 +101,11 @@ artifactory {
 	contextUrl = artifactoryURL
 	publish {
 		repository {
-			repoKey = artifactoryRepoKey
+			repoKey = Pega_PDM
 			username = artifactoryUser
 			password = artifactoryPassword
 
-			mavenCompatible = true
+			mavenCompatible = false
 		}
 		defaults {
 			publications ('main')

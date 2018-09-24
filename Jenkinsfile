@@ -101,7 +101,7 @@ pipeline {
 
             steps {
                 echo 'Publishing to Artifactory '
-                sh "./gradlew artifactoryPublish -PartifactoryUser=${ARTIFACTORY_USER} -PartifactoryPassword=${ARTIFACTORY_PASSWORD}"
+                sh "./gradlew artifactoryPublish -PartifactoryUser= -PartifactoryPassword="
             }
         }
 
@@ -111,17 +111,17 @@ pipeline {
                 echo 'Run regression tests'
                 echo 'Publish to production repository'
             }
-        }
+        }*/
 
         stage('Fetch from Artifactory') {
 
             steps {
               echo 'Fetching application archive from Artifactory'
-              sh  "./gradlew fetchFromArtifactory -PartifactoryUser=${ARTIFACTORY_USER} -PartifactoryPassword=${ARTIFACTORY_PASSWORD}"
+              sh  "./gradlew fetchFromArtifactory -PartifactoryUser=pega_admin -PartifactoryPassword=P@ssw0rd_pega"
             }
         }
 
-        stage('Create restore point') {
+        /*stage('Create restore point') {
 
             steps {
                 echo 'Creating restore point'
