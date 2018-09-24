@@ -331,13 +331,13 @@ task executePegaUnitTests(type: org._10ne.gradle.rest.RestTask) {
 
     println "\nTest result file location - ${testResultFileHandle.absolutePath}"
 
-	uri = "${targetURL}/PRRestService/PegaUnit/Rule-Test-Unit-Case/pzExecuteTests"
+	uri = "http://svl-pgwasdb-d1:9101/pdmodevb/PRRestService/PegaUnit/Rule-Test-Unit-Case/pzExecuteTests"
 	//?TestSuiteID=${java.net.URLEncoder.encode(testSuite, "UTF-8")}"
 	
 	// Add the access group if it is specified
-	if (accessGroup != null) {
+	/*if (accessGroup != null) {
 		uri = "${uri}&AccessGroup=${java.net.URLEncoder.encode(accessGroup, "UTF-8")}"
-	}
+	}*/
 
 	username = findProperty('pegaUsername')
 	password = findProperty('pegaPassword')
