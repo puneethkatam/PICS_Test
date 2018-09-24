@@ -169,8 +169,8 @@
 
 	
 	<target name="-processInstances">
-	<property name="generatedFolder" value="./"/>
-
+         <property name="applicationName" value=""/>
+	 <property name="applicationVersion" value=""/>
 		<echo message="Performing ${prpc.service.util.action} on ${prpcserviceutils.number.of.systems} instance(s), generated ${generatedFolder}"/>
 		<property name="arg.line" value=" -action ${prpc.service.util.action} -propFileDir ${generatedFolder} -poolSize ${prpcserviceutils.pool.size} -requestTimeOut ${prpcserviceutils.request.timeout} -tempDir ${install.temp.dir} -artifactsDir ${artifacts.dir}"/>
 		<pega:echoargline line="${arg.line}"/>
