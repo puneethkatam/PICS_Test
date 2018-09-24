@@ -38,7 +38,7 @@ pipeline {
             echo 'Execute tests'
 
             withEnv(['TESTRESULTSFILE="TestResult.xml"']) {
-              sh "./gradlew executePegaUnitTests -PtargetURL=${PEGA_DEV} -PpegaUsername=${IMS_USER} -PpegaPassword=${IMS_PASSWORD} -PtestResultLocation=${WORKSPACE} -PtestResultFile=${TESTRESULTSFILE}"
+              sh "./gradlew executePegaUnitTests -PtargetURL=${PEGA_DEV} -PpegaUsername=puneeth_export -PpegaPassword=rules -PtestResultLocation=${WORKSPACE} -PtestResultFile=${TESTRESULTSFILE}"
                     
              // junit(allowEmptyResults: true, testResults: "${env.WORKSPACE}/${env.TESTRESULTSFILE}")
 
@@ -51,7 +51,7 @@ pipeline {
           }
        }
 
-       stage('Merge branch'){
+       /*stage('Merge branch'){
         when {
           environment name: "PERFORM_MERGE", value: "true"
         }
@@ -117,7 +117,7 @@ pipeline {
               echo 'Deploying to production : ' + env.PEGA_PROD
               sh "./gradlew performOperation -Dprpc.service.util.action=import -Dpega.rest.server.url=${env.PEGA_PROD}/PRRestService -Dpega.rest.username=${env.IMS_USER}  -Dpega.rest.password=${env.IMS_PASSWORD} -Duser.temp.dir=${WORKSPACE}/tmp"
             }
-        }
+        }*/
   }
 
   post {
