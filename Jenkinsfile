@@ -65,7 +65,7 @@ pipeline {
 			             body: "Your build ${env.BUILD_NUMBER}",
 				               to: "puneeth.in@gmail.com"
 					             )
-		input 'Ready to go?'; 
+		input message: 'Ready to go?'; 
 
 		}
 
