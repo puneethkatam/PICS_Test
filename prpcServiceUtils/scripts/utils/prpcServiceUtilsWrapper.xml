@@ -178,7 +178,7 @@
 			<equals arg1="${prpcserviceutils.number.of.systems}" arg2="multiple" />
 			<ac:then>
 				<echo message="Reading connection information from ${prpcserviceutils.connection.filepath}"/>
-				<pega:propertyfilegenerator basePropertyFile="${prpc.service.utils.property.filepath}" connectionPropertiesFile="${prpcserviceutils.connection.filepath}" generatedFolderPath="${generatedFolder}" systemFilesSuffix="prpcServiceUtils.properties" pathToSystemProperties="${basedir}" generatedFilesSuffix="prpcServiceUtils.properties" echo="true" operationName="${prpc.service.util.action}" opSpecificFile="${local.operation.specific.file.path}"/>
+				<pega:propertyfilegenerator basePropertyFile="${prpc.service.utils.property.filepath}" connectionPropertiesFile="${prpcserviceutils.connection.filepath}" generatedFolderPath="${basedir}" systemFilesSuffix="prpcServiceUtils.properties" pathToSystemProperties="${basedir}" generatedFilesSuffix="prpcServiceUtils.properties" echo="true" operationName="${prpc.service.util.action}" opSpecificFile="${local.operation.specific.file.path}"/>
 				<antcall target="_callService"/>		
 				
 			</ac:then>
