@@ -66,6 +66,13 @@ pipeline {
 		}
 
        }
+       stage('Export from Dev') {
+                   steps {
+		                   echo 'Exporting application from Dev environment : ' + env.PEGA_DEV
+				                   sh "./gradlew performOperation -Dprpc.service.util.action=export -Dpega.rest.server.url=${env.PEGA_DEV}/PRRestService -Dpega.rest.username=puneeth_export -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
+						               }
+							               }
+
 
        stage('Merge branch'){
         /*when {
@@ -89,12 +96,6 @@ pipeline {
           }
         }
 
-        stage('Export from Dev') {
-            steps {
-                echo 'Exporting application from Dev environment : ' + env.PEGA_DEV
-                sh "./gradlew performOperation -Dprpc.service.util.action=export -Dpega.rest.server.url=${env.PEGA_DEV}/PRRestService -Dpega.rest.username=puneeth_export -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
-            }
-        }
 
        /* stage('Publish to Artifactory') {
 
