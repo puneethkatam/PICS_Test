@@ -60,7 +60,7 @@ pipeline {
 
             echo 'Perform Merge' 
 
-            sh "./gradlew merge -PtargetURL=${env.PEGA_DEV} -Pbranch=master -PpegaUsername=${IMS_USER} -PpegaPassword=${IMS_PASSWORD}"
+            sh "./gradlew merge -PtargetURL=${env.PEGA_DEV} -Pbranch=TestDevOps4 -PpegaUsername=puneeth_export -PpegaPassword=rules"
             echo 'Evaluating merge Id from gradle script = ' + env.MERGE_ID
             timeout(time: 5, unit: 'MINUTES') {
                 echo "Setting the timeout for 1 min.."
