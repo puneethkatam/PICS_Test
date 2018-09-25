@@ -74,7 +74,7 @@ def importFolder = findProperty("importFolder") ?: FileFinder.insureDirectoryExi
 ant.properties['service.responseartifacts.dir'] = exportFolder
 ant.properties['export.async']=exportAsyncSetting
 ant.properties['import.async']=importAsyncSetting
-ant.properties['import.archive.path']=""
+ant.properties['import.archive.path']="http://svl-jbuild-d1:8091/artifactory/Pega_PDM/branch/TestDevOps4/ExportWizard/"
 
 
 println "\nBuildNumber : ${buildNumber}"
