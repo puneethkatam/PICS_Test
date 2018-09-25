@@ -73,7 +73,7 @@ pipeline {
 						               }
 							               }
 
-
+/*
        stage('Merge branch'){
         /*when {
           environment name: "PERFORM_MERGE", value: "true"
@@ -134,7 +134,7 @@ pipeline {
               echo 'Deploying to production : ' + env.PEGA_PROD
               sh "./gradlew performOperation -Dprpc.service.util.action=import -Dpega.rest.server.url=${env.PEGA_PROD}/PRRestService -Dpega.rest.username=puneeth_export  -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
             }
-        }
+        }*/
   }
 
   post {
