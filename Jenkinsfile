@@ -70,14 +70,14 @@ pipeline {
                    steps {
 		                   echo 'Exporting application from Dev environment : ' + env.PEGA_DEV
 				                   sh "./gradlew performOperation -Dprpc.service.util.action=export -Dpega.rest.server.url=${env.PEGA_DEV}/PRRestService -Dpega.rest.username=puneeth_export -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
-						               }
+							  }
 							               }
 
-/*
+
        stage('Merge branch'){
-        when {
+       /* when {
           environment name: "PERFORM_MERGE", value: "true"
-        }
+        }*/
 
         steps{
 
@@ -97,7 +97,7 @@ pipeline {
         }
 
 
-        stage('Publish to Artifactory') {
+        /*stage('Publish to Artifactory') {
 
             steps {
                 echo 'Publishing to Artifactory '
@@ -127,14 +127,16 @@ pipeline {
                 echo 'Creating restore point'
                 sh "./gradlew createRestorePoint -PtargetURL=${PEGA_PROD} -PpegaUsername=${IMS_USER} -PpegaPassword=${IMS_PASSWORD}"
             }
-        }
+        }*/
         stage('Deploy to production') {
 
             steps {
               echo 'Deploying to production : ' + env.PEGA_PROD
+	 sh "./prpcServiceUtils/scripts/utils/getJarFromJF.sh"
+
               sh "./gradlew performOperation -Dprpc.service.util.action=import -Dpega.rest.server.url=${env.PEGA_PROD}/PRRestService -Dpega.rest.username=puneeth_export  -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp"
             }
-        }*/
+        }
   }
 
   post {
