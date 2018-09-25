@@ -76,7 +76,7 @@ def importFolder = findProperty("importFolder") ?: FileFinder.insureDirectoryExi
 ant.properties['service.responseartifacts.dir'] = exportFolder
 ant.properties['export.async']=exportAsyncSetting
 ant.properties['import.async']=importAsyncSetting
-ant.properties['import.archive.path']="ExportWizard/TestDevOps4_20180925T182245_GMT.jar"
+ant.properties['import.archive.path']=importfolder
 
 
 println "\nBuildNumber : ${buildNumber}"

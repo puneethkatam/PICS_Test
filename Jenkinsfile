@@ -127,7 +127,7 @@ pipeline {
                 echo 'Creating restore point'
                 sh "./gradlew createRestorePoint -PtargetURL=${PEGA_PROD} -PpegaUsername=${IMS_USER} -PpegaPassword=${IMS_PASSWORD}"
             }
-        }
+        }*/
         stage('Deploy to production') {
 
             steps {
@@ -135,7 +135,7 @@ pipeline {
 
               sh "./gradlew performOperation -Dprpc.service.util.action=import -Dpega.rest.server.url=${env.PEGA_PROD}/PRRestService -Dpega.rest.username=puneeth_export  -Dpega.rest.password=rules -Duser.temp.dir=${WORKSPACE}/tmp --debug"
             }
-        }*/
+        }
   }
 
   post {
