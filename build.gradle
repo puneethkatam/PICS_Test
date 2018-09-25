@@ -46,6 +46,7 @@ def buildNumber = findProperty("buildNumber") ?:System.env.BUILD_NUMBER
 def applicationName = "DevOps"
 //findProperty("applicationName") ?:defaultApplicationName
 def applicationVersion = "01.01.03"
+
 //findProperty("applicationVersion") ?:defaultApplicationVersion
 def artifactVersion = findProperty("artifactVersion") ?:applicationVersion + '_' + buildNumber
 def artifactoryURL = findProperty("artifactoryURL") ?:System.env.ARTIFACTORY_URL
@@ -55,7 +56,8 @@ def artifactoryRepoKey = "Pega_PDM"
 def archiveName = "${applicationName}_${applicationVersion}"
 def archiveNameWithExt = "${archiveName}.zip"
 //def artifactLocation = findProperty("artifactoryLocation") ?:"${artifactoryURL}/${artifactoryRepoKey}/${artifactorGroup}/${applicationName}/${artifactVersion}/${applicationName}-${applicationVersion}_${buildNumber}.zip"
-def artifactLocation = "http://svl-jbuild-d1:8091/artifactory/Pega_PDM/branch/TestDevOps4/ExportWizard/TestDevOps4_20180925T004514_GMT.jar"
+def artifactLocation="http://svl-jbuild-d1:8091/artifactory/Pega_PDM/product/DevOps_Export_01-01-01/ExportWizard/TestToday"
+//def artifactLocation = "http://svl-jbuild-d1:8091/artifactory/Pega_PDM/branch/TestDevOps4/ExportWizard/TestDevOps4_20180925T004514_GMT.jar"
 //replace https with http since the download location does not require sign in
 artifactLocation = artifactLocation.replaceAll(/^https\:/, 'http:')
 def exportAsyncSetting = findProperty("exportAsyncSetting") ?:defaultExportAsyncSetting
