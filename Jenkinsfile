@@ -75,9 +75,9 @@ pipeline {
 
 /*
        stage('Merge branch'){
-        /*when {
+        when {
           environment name: "PERFORM_MERGE", value: "true"
-        }*/
+        }
 
         steps{
 
@@ -97,7 +97,7 @@ pipeline {
         }
 
 
-       /* stage('Publish to Artifactory') {
+        stage('Publish to Artifactory') {
 
             steps {
                 echo 'Publishing to Artifactory '
@@ -111,7 +111,7 @@ pipeline {
                 echo 'Run regression tests'
                 echo 'Publish to production repository'
             }
-        }*/
+        }
 
         stage('Fetch from Artifactory') {
 
@@ -121,13 +121,13 @@ pipeline {
             }
         }
 
-        /*stage('Create restore point') {
+        stage('Create restore point') {
 
             steps {
                 echo 'Creating restore point'
                 sh "./gradlew createRestorePoint -PtargetURL=${PEGA_PROD} -PpegaUsername=${IMS_USER} -PpegaPassword=${IMS_PASSWORD}"
             }
-        }*/
+        }
         stage('Deploy to production') {
 
             steps {
